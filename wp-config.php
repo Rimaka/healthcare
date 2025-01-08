@@ -64,9 +64,9 @@ $table_prefix = 'wp_';
 
 define( 'WP_AUTO_UPDATE_CORE', 'minor' );
 define( 'DB_NAME', "sql_new_healthte" );
-define( 'DB_USER', "sfaxher581" );
-define( 'DB_PASSWORD', "XgrK6xzU5dQ6" );
-define( 'DB_HOST', "sfaxher581.mysql.db:3306" );
+define( 'DB_USER', "root" );
+define( 'DB_PASSWORD', "" );
+define( 'DB_HOST', "localhost" );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

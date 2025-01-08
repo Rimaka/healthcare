@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Krowd Themer
  * Description: Open Setting, Post Type, Shortcode ... for theme 
- * Version: 1.6.0
+ * Version: 1.6.1
  * Author: Gaviasthemes Team
  */
 
@@ -16,8 +16,7 @@ class Gavias_Krowd_Themer{
 		$this->include_post_types();
       add_action('wp_head', array($this, 'gaviasthemer_ajax_url'));
       add_action('wp_enqueue_scripts', array($this, 'register_scripts'));
-      load_plugin_textdomain('krowd-themer', false, 'krowd-themer/languages/');
-
+      add_action('init', array($this, 'load_plugin_textdomain'));
       $this->gavias_plugin_update();
 	}
    
@@ -25,6 +24,10 @@ class Gavias_Krowd_Themer{
      echo '<script> var ajaxurl = "' . admin_url('admin-ajax.php') . '";</script>';
    }
  
+ 	public function load_plugin_textdomain(){
+      load_plugin_textdomain('krowd-themer', false, 'krowd-themer/languages/');
+ 	}
+
 	public function include_files(){
       require_once('redux/admin-init.php');
       require_once('includes/functions.php');

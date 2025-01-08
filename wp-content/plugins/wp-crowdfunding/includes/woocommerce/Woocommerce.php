@@ -29,7 +29,6 @@ class Woocommerce {
 		add_filter( 'woocommerce_paypal_args', array( $this, 'custom_override_paypal_email' ), 100, 1 ); // Override paypal reciever email address with campaign creator email
 		add_action( 'woocommerce_add_to_cart_validation', array( $this, 'remove_crowdfunding_item_from_cart' ), 10, 5 ); // Remove crowdfunding item from cart
 		add_action( 'woocommerce_new_order', array( $this, 'crowdfunding_order_type' ) ); // Track is this product crowdfunding.
-		add_filter( 'woocommerce_checkout_fields', array( $this, 'override_checkout_fields' ) ); // Remove billing address from the checkout page
 		add_action( 'woocommerce_review_order_before_payment', array( $this, 'check_anonymous_backer' ) );
 		add_action( 'woocommerce_checkout_order_processed', array( $this, 'check_anonymous_backer_post' ) );
 		add_action( 'woocommerce_new_order_item', array( $this, 'crowdfunding_new_order_item' ), 10, 3 );
@@ -102,26 +101,6 @@ class Woocommerce {
 
 		require_once WPCF_DIR_PATH . 'includes/woocommerce/Account_Dashboard.php';
 		new \WPCF\woocommerce\Account_Dashboard();
-	}
-
-	/**
-	 * Remove billing address from the checkout page
-	 */
-	function override_checkout_fields( $fields ) {
-		// Remove all billing fields
-		unset( $fields['billing']['billing_first_name']);
-		unset( $fields['billing']['billing_last_name']);
-		unset( $fields['billing']['billing_company']);
-		unset( $fields['billing']['billing_address_1']);
-		unset( $fields['billing']['billing_address_2']);
-		unset( $fields['billing']['billing_city']);
-		unset( $fields['billing']['billing_postcode']);
-		unset( $fields['billing']['billing_country']);
-		unset( $fields['billing']['billing_state']);
-		unset( $fields['billing']['billing_phone']);
-		unset( $fields['billing']['billing_email']);
-
-		return $fields;
 	}
 
 	/**

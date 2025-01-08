@@ -3,8 +3,8 @@ Contributors: Ibericode, DvanKooten, hchouhan, lapzor
 Donate link: https://www.mc4wp.com/contribute/#utm_source=wp-plugin-repo&utm_medium=mailchimp-for-wp&utm_campaign=donate-link
 Tags: mailchimp, subscribe, email, newsletter, form
 Requires at least: 4.6
-Tested up to: 6.6
-Stable tag: 4.9.18
+Tested up to: 6.7
+Stable tag: 4.9.21
 License: GPL-3.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.2
@@ -53,9 +53,9 @@ This plugins helps you grow your email list in Mailchimp. You can use it to crea
 
 - Well documented through our [knowledge base](https://www.mc4wp.com/kb/).
 
-- Developer friendly. For some inspiration, check out our [repository of example code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/master/sample-code-snippets).
+- Developer friendly. For some inspiration, check out our [repository of example code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/main/sample-code-snippets).
 
-- Ready for PHP 8.4, but backwards-compatible all the way down to PHP 5.6.
+- Ready for PHP 8.4, but backwards-compatible all the way down to PHP 7.2.
 
 #### What is Mailchimp?
 
@@ -172,7 +172,7 @@ This plugin is being developed on GitHub. If you want to collaborate, please loo
 
 #### Customizing the plugin
 
-The plugin provides various filter and action hooks that allow you to modify or extend the default behavior. We're also maintaining a [collection of sample code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/master/sample-code-snippets).
+The plugin provides various filter and action hooks that allow you to modify or extend the default behavior. We're also maintaining a [collection of sample code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/main/sample-code-snippets).
 
 == Screenshots ==
 
@@ -187,6 +187,25 @@ The plugin provides various filter and action hooks that allow you to modify or 
 9. Settings page for e-commerce integration with Mailchimp. Requires [Mailchimp for WordPress Premium](https://www.mc4wp.com/).
 
 == Changelog ==
+
+
+#### 4.9.21 - Jan 08, 2025
+
+- [Forms] Rename "list choice" to "audience choice" in available form fields.
+- [Ninja Forms] Fix gettext being called too early warning in Ninja Forms base class.
+- [WooCommerce] Allow pre-checking of sign-up checkbox in Checkout Block.
+
+
+#### 4.9.20 - Dec 18, 2024
+
+- Fix Ninja Forms integration field no longer showing up.
+- Fix "link is expired" message because of missing nonce on button to dismiss API key notice.
+- [WPML] Added text_no_lists_selected to the config file so it can be translated. Thanks [Diego Pereira](https://github.com/diiegopereira)!
+
+
+#### 4.9.19 - Nov 11, 2024
+
+- Add integration with [Prosopo](https://prosopo.io/), a GDPR compliant anti-spam solution for protecting your sign-up forms against bot sign-ups. Thanks [Maxim Akimov](https://github.com/light-source)!
 
 
 #### 4.9.18 - Oct 21, 2024
@@ -297,7 +316,7 @@ This drops support for some very old browsers, but results in smaller bundle siz
 
 #### 4.9.2 - Mar 21, 2023
 
-- Add support for a field named `MARKETING_PERMISSIONS` to enable GDPR fields configured in Mailchimp. A [sample code snippet can be found here](https://github.com/ibericode/mailchimp-for-wordpress/blob/master/sample-code-snippets/forms/gdpr-marketing-permissions.md).
+- Add support for a field named `MARKETING_PERMISSIONS` to enable GDPR fields configured in Mailchimp. A [sample code snippet can be found here](https://github.com/ibericode/mailchimp-for-wordpress/blob/main/sample-code-snippets/forms/gdpr-marketing-permissions.md).
 - Remove Google reCaptcha feature. This was already disabled if you were not already using it.
 
 
@@ -1151,37 +1170,7 @@ This release updates the plugin to version 3 of the Mailchimp API. Please [read 
 
 **Improvements**
 
-- Update JavaScript dependencies for admin screens.
-- Test debug log & show notice when it's not writable.
-
-**Additions**
-
-- Add "placeholder" option for dropdown fields.
-
-
-#### 3.1.10 - June 21, 2016
-
-**Fixes**
-
-- Styles Builder in Premium not building because of incorrect flag in core plugin.
-
-**Improvements**
-
-- Don't show position option for WooCommerce integration when sign-up is implicit.
-- Improvements to form previewer logic.
-- Make sure admin notifications are always shown exactly one time.
-
-#### 3.1.9 - June 7, 2016
-
-**Fixes**
-
-- Placeholder polyfill wasn't loaded (only in IE8 and below).
-
-**Improvements**
-
-- Don't write to debug log if it is not writable.
-- Reset some CSS properties for commonly used class names in Form Editor & Debug Log.
-- Do not unnecessarily register styles which are then immediately ...
+- Update JavaScript dependencies for admin ...
 
 == Upgrade Notice ==
 
